@@ -4,13 +4,13 @@
 1. [Mission](#mission-briefing)
 2. [The Story](#the-story)
 3. [The handsmen](#the-handsmen)  
-  3.1 [Kim Boe a.k.a. *Kiekeboe*](#kim-boe-a.k.a.-*kiekeboe*:)  
+  3.1 [Kim Boe a.k.a. *Kiekeboe*](#kim-boe-a.k.a.-*kiekeboe*)  
   3.2 [Karel Fur a.k.a. *The Cat*](#karel-fur-a.k.a.-*the-cat*)  
-  3.3 [William Bigmouth a.k.a. *DropIt*](#william-bigmouth-a.k.a.-*dropit*:)  
-  3.4 [Simon Tyrone a.k.a. *lazy*](#simon-tyrone-a.k.a.-*lazy*:)  
-  3.5 [Maria Seemore a.k.a. *Waterdrops*](#maria-seemore-a.k.a.-*waterdrops*:)
+  3.3 [William Bigmouth a.k.a. *DropIt*](#william-bigmouth-a.k.a.-*dropit*)  
+  3.4 [Simon Tyrone a.k.a. *lazy*](#simon-tyrone-a.k.a.-*lazy*)  
+  3.5 [Maria Seemore a.k.a. *Waterdrops*](#maria-seemore-a.k.a.-*waterdrops*)
 4. [Housing](#housing)
-5. [Talen gebruikt](#talen-gebruikt)
+5. [Talen gebruikt](#talen)
 6. [Samenwerking](#samenwerking)
 
 ## Mission briefing:
@@ -24,7 +24,7 @@ In deze allereerste Hackathon van Winc Academy gaan wij opzoek naar de beste, mo
 2. Na een korte pauze verschijnt "The Boss" (insert boss music?). Wanneer de gebruiker op de knop klikt, ontploft de knop en loopt de levensbalk van de knop terug, zal die sterven? Maar ...
 3. Poef! "The Boss" IS BACK ! EN dit keer is die niet alleen. (2 random knoppen verschijnen erbij ). De gebruiker klikt op één va de 2 nieuwe buttons, maar die hebben allebei een irritante effect, en lijken geen effect te hebben op de knop-levensbalk.
 4. Uit pure frustatie gaat de gebruiker terug naar "The Boss" en klikt er nogmaals op, "The Boss" ontploft van woede en de levensbalk van de knop wordt weer verminderd. Maar...
-5. Poef! "The Boss" geeft niet op en verschijnt voor de derde keer, samen met 3 nieuwe irritante knopen (alle 5 soorten irritante knoppen staan nu op het scherm).
+5. Poef! "The Boss" geeft niet op en verschijnt voor de derde keer, samen met 3 nieuwe irritante knoppen (alle 5 soorten irritante knoppen staan nu op het scherm).
 6. Na een tijdje met de nieuwe knoppen te hebben geworsteld, vraagt de user aan "The Boss" om zijn knoppen tot orde te roepen. De button levensbalk is nu leeg, "The Boss" heeft het opgegeven en verdwijnt helemaal van het scherm en neemt zijn handlangers mee.
 7. You Won The Game! (misschien verschijnt er hier een input-field, en daarna een scoreboard lijst met namen van alle juristen that won the game)
 

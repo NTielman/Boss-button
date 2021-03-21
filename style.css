@@ -98,3 +98,19 @@ body {
     left: 50%;
     transform: translateX(-50%) scale(2);
 }
+
+/*--------- BOSSMAN -----------*/
+@keyframes fadeInAnimation {
+    0% {opacity: 0}
+    100% {opacity: 1}
+  }
+  
+  .fadeIn {
+    animation: fadeInAnimation 2s ease forwards;
+  }
+
+.hidden_footer {
+    padding: 20px;
+    position: absolute;
+    bottom: 0;
+}
