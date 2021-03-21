@@ -10,6 +10,7 @@ import { createMe2 as createLuie } from './luie/knop.js'
 ///////////////////////////////////////////////////
 
 const btnTheboss = document.getElementById('boss_button');
+const bossLifeBar = document.querySelector('.boss_life_bar')
 
 let clickCounter = 0;
 
@@ -71,12 +72,15 @@ const getRandomFunction = (functionArray) => {
 const addButtons = (e) => {
     if (!areThereXButtons()) {
         if (clickCounter == 0) {
+            /* first click  left -60%, second click left -30%, 3e click left 0% */
+            bossLifeBar.style.left = '30%';
             for (let i = 0; i < 2; i++) {
                 const htmlObject = getRandomFunction(buttonArray)
                 const positions = getPosition()
                 addButton(htmlObject, positions[1], positions[0])
             }
         } else if (clickCounter == 1) {
+            bossLifeBar.style.left = '60%';
             for (let i = 0; i < 3; i++) {
                 const htmlObject = getRandomFunction(buttonArray)
                 const positions = getPosition()
@@ -84,7 +88,11 @@ const addButtons = (e) => {
             }
         }
 
+    } else {
+        bossLifeBar.style.left = '100%';
     }
+    const audio = new Audio("./sounds/intro.mp3")
+    audio.play()
     clickCounter++
 }
 
