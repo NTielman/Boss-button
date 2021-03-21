@@ -10,6 +10,7 @@ import {
     volumeDown,
     getVolume
 } from './soundcontrol/volume.js'
+import { bgMusicOnoff } from './soundcontrol/bgmusic.js'
 
 ////////////////////////////////////////////////////
 //              BOSSMAN                           //
@@ -27,11 +28,12 @@ let clickCounter = 0;
 
 const btnVolumeUp = createVolumeUp();
 const btnVolumeDown = createVolumeDown();
+const btnOnOff = bgMusicOnoff()
 btnVolumeUp.addEventListener("click", volumeUp)
 btnVolumeDown.addEventListener("click", volumeDown)
 
-const bGaudio = new Audio("./sounds/bGmusic.mp3")
-bGaudio.play();
+///// Background audio
+export const bGaudio = new Audio("./sounds/bGmusic.mp3")
 bGaudio.loop = true;
 setInterval(() => {
     bGaudio.volume = getVolume();    
@@ -129,7 +131,7 @@ const addButtons = (e) => {
         const buttons = document.querySelectorAll('.btn');
         buttons.forEach(btn => { btn.style.pointerEvents = "none"; })
         titleCard.style.opacity = 1;
-        titleCard.innerHTML = "You Won The Game!";
+        titleCard.innerHTML = `<center>You Won The Game!<br /> hit F5 or reload page to play again</center>`
     }
     const audio = new Audio("./sounds/intro.mp3");
     audio.play();
@@ -150,4 +152,5 @@ const getPosition = () => {
 
 document.body.appendChild(btnVolumeUp)
 document.body.appendChild(btnVolumeDown)
+document.body.appendChild(btnOnOff)
 btnTheboss.addEventListener('click', addButtons);

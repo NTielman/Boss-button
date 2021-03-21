@@ -26,7 +26,7 @@ In deze allereerste Hackathon van Winc Academy gaan wij opzoek naar de beste, mo
 4. Uit pure frustatie gaat de gebruiker terug naar "The Boss" en klikt er nogmaals op, "The Boss" ontploft van woede en de levensbalk van de knop wordt weer verminderd. Maar...
 5. Poef! "The Boss" geeft niet op en verschijnt voor de derde keer, samen met 3 nieuwe irritante knoppen (alle 5 soorten irritante knoppen staan nu op het scherm).
 6. Na een tijdje met de nieuwe knoppen te hebben geworsteld, vraagt de user aan "The Boss" om zijn knoppen tot orde te roepen. De button levensbalk is nu leeg, "The Boss" heeft het opgegeven en verdwijnt helemaal van het scherm en neemt zijn handlangers mee.
-7. You Won The Game! (misschien verschijnt er hier een input-field, en daarna een scoreboard lijst met namen van alle juristen that won the game)
+7. You Won The Game!
 
 *Tot deze story zijn we gekomen na een brainstormsessie in Slack.*
 
