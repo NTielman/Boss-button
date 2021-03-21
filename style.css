@@ -131,7 +131,8 @@ body {
 }
   
 #volUp,
-#volDown {
+#volDown, 
+#bgONoff {
     position: absolute;
     bottom: 10px;
     transform: scale(0.7);
@@ -143,4 +144,9 @@ body {
 
 #volDown {
     left: 145px;
+}
+
+#bgONoff {
+    bottom: 65px;
+    left: 70px;
 }
