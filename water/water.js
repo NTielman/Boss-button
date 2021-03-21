@@ -26,19 +26,19 @@ export const createMe = () => {
     newLink.appendChild(newSpan);
     newLink.appendChild(newDiv);
 
-    const spillageContainer = document.createElement("div")
-    const spilledLiquid = document.createElement("div")
+    const spillageContainer = document.createElement("div");
+    const spilledLiquid = document.createElement("div");
 
-    spillageContainer.classList.add('spillage_container')
-    spilledLiquid.classList.add('spilled_liquid')
-    spillageContainer.appendChild(spilledLiquid)
+    spillageContainer.classList.add('spillage_container');
+    spilledLiquid.classList.add('spilled_liquid');
+    spillageContainer.appendChild(spilledLiquid);
 
     newLink.addEventListener('click', () => {
-        emptyTank(newLink, newDiv, spilledLiquid)
-    })
-    newContainer.appendChild(newLink)
-    newContainer.appendChild(spillageContainer)
-    newContainer.classList.add('button_container')
+        emptyTank(newLink, newDiv, spilledLiquid);
+    });
+    newContainer.appendChild(newLink);
+    newContainer.appendChild(spillageContainer);
+    newContainer.classList.add('button_container');
 
     return newContainer;
 };
