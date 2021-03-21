@@ -1,10 +1,15 @@
-
 import { createMe as createCat } from './cat/cat.js'
 import { createMe as createKiekeboe } from './kiekeboe/kiekeboe.js'
 import { createMe as createWater } from './water/water.js'
 import { createMe as createWhaa } from './whaa/whaa.js'
 import { createMe2 as createLuie } from './luie/knop.js'
-import { pop } from './theboss.js'
+import {
+    createVolumeUp,
+    createVolumeDown,
+    volumeUp,
+    volumeDown,
+    getVolume
+} from './soundcontrol/volume.js'
 
 ////////////////////////////////////////////////////
 //              BOSSMAN                           //
@@ -13,17 +18,39 @@ import { pop } from './theboss.js'
 const btnTheboss = document.createElement("button")
 btnTheboss.id = "boss_button";
 btnTheboss.classList.add("btn");
-btnTheboss.classList.add("fadeIn");
 btnTheboss.innerText = "Boss";
+document.body.appendChild(btnTheboss)
 
-// Wait to add the BOSSMAN button to the DOM for dramatic effect
-setTimeout(() => {    
-    document.body.appendChild(btnTheboss)
-}, 1000)
-
-const bossLifeBar = document.querySelector('.boss_life_bar')
-
+const bossLifeBar = document.querySelector('.boss_life_bar');
+const titleCard = document.querySelector('.title_card');
 let clickCounter = 0;
+
+const btnVolumeUp = createVolumeUp();
+const btnVolumeDown = createVolumeDown();
+btnVolumeUp.addEventListener("click", volumeUp)
+btnVolumeDown.addEventListener("click", volumeDown)
+
+const bGaudio = new Audio("./sounds/bGmusic.mp3")
+bGaudio.play();
+bGaudio.loop = true;
+setInterval(() => {
+    bGaudio.volume = getVolume();    
+}, 200);
+
+window.addEventListener('DOMContentLoaded', (event) => {
+    titleCard.innerHTML = "Welcome Player 1";
+
+    setTimeout(() => {
+        titleCard.style.opacity = 0;
+    }, 1000)
+    // Wait to add the BOSSMAN button to the DOM for dramatic effect
+    setTimeout(() => {
+        btnTheboss.style.opacity = 1;
+    }, 2000)
+    setTimeout(() => {
+        btnTheboss.style.animation = 'pulse 5s linear infinite';
+    }, 3000)
+});
 
 // We can expect these buttons on screen
 const buttonArray = [
@@ -76,55 +103,38 @@ const getRandomFunction = (functionArray) => {
 }
 
 /**
- * After checking number of buttons and counter-count
  * Calls the addButton function
  * @param {event} e 
  */
 const addButtons = (e) => {
-    if (!areThereXButtons()) {
-        if (clickCounter == 0) {
-            /* first click  left -60%, second click left -30%, 3e click left 0% */
-            bossLifeBar.style.left = '30%';
-            for (let i = 0; i < 2; i++) {
-                const htmlObject = getRandomFunction(buttonArray);
-                const positions = getPosition();
-                addButton(htmlObject, positions[1], positions[0]);
-            }
-        } else if (clickCounter == 1) {
-            bossLifeBar.style.left = '60%';
-            for (let i = 0; i < 3; i++) {
-                const htmlObject = getRandomFunction(buttonArray);
-                const positions = getPosition();
-                addButton(htmlObject, positions[1], positions[0]);
-            }
+    if (clickCounter == 0) {
+        bossLifeBar.style.left = '30%';
+        for (let i = 0; i < 2; i++) {
+            const htmlObject = getRandomFunction(buttonArray);
+            const positions = getPosition();
+            addButton(htmlObject, positions[1], positions[0]);
+        }
+    } else if (clickCounter == 1) {
+        bossLifeBar.style.left = '60%';
+        for (let i = 0; i < 3; i++) {
+            const htmlObject = getRandomFunction(buttonArray);
+            const positions = getPosition();
+            addButton(htmlObject, positions[1], positions[0]);
         }
     } else {
+        // Game is over 
         bossLifeBar.style.left = '100%';
-        pop(e)
+
+        // disable all buttons
+        const buttons = document.querySelectorAll('.btn');
+        buttons.forEach(btn => { btn.style.pointerEvents = "none"; })
+        titleCard.style.opacity = 1;
+        titleCard.innerHTML = "You Won The Game!";
     }
     const audio = new Audio("./sounds/intro.mp3");
     audio.play();
-    audio.volume = 0.4;
+    audio.volume = getVolume();
     clickCounter++;
-}
-
-
-// const audio = new BgAudio("./sounds/bGmusic.wav")
-// audio.loop = true;
-// audio.play();
-// audio.volume = 0.4;
- 
-/**
- * Checks if there are a number elements with button-tag in the DOM
- * @param {Integer} numButtons number of elements max on screen
- * @returns {Boolean} True if >= 5 buttons, else False
- */
-const areThereXButtons = (numButtons = 5) => {
-    if (document.getElementsByTagName("button").length >= numButtons) {
-        return true;
-    } else {
-        return false;
-    }
 }
 
 /**
@@ -138,4 +148,6 @@ const getPosition = () => {
     return nextPosition;
 }
 
+document.body.appendChild(btnVolumeUp)
+document.body.appendChild(btnVolumeDown)
 btnTheboss.addEventListener('click', addButtons);

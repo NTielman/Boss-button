@@ -1,5 +1,5 @@
 /*
-Starts animation for empting the water button
+Starts animation for emptying the water button
 */
 const emptyTank = (waterBtn, liquid, spilledLiquid) => {
     waterBtn.style.pointerEvents = "none";
