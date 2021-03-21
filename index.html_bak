@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <script type="module" defer src="./main.js"></script>
+    <title>Boss Battle</title>
+</head>
+
+<body>
+    <header class="life_bars">
+        <div class="player_life">
+            <p>Player 1</p>
+            <span class="player_life_bar"></span>
+        </div>
+        <div class="boss_life">
+            <p>Boss</p>
+            <span class="boss_life_bar"></span>
+        </div>
+    </header>
+
+    <button id="boss_button" class="btn">Boss</button>
+
+</body>
+
+</html>

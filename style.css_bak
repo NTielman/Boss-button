@@ -1,0 +1,88 @@
+ /* import all button stylesheets here */
+@import 'cat/cat.css';
+@import 'kiekeboe/kiekeboe.css';
+@import 'water/water.css';
+@import 'whaa/whaa.css';
+
+/* ------- universal styling ------- */
+* {
+    padding: 0px;
+    margin: 0px;
+}
+  
+html {
+    height: 100vh;
+}
+  
+body {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    font-family: 'VT323', monospace;
+    font-size: 30px;
+    background-size: cover;
+    background-blend-mode: darken;
+    background-image: url(https://wallpaperaccess.com/full/42337.jpg);
+    background-color: rgb(0, 54, 12);
+    color: white;
+}
+
+.life_bars {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.boss_life {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.boss_life_bar,
+.player_life_bar {
+    width: 300px;
+    height: 20px;
+    display: block;
+    background-color: chartreuse;
+    box-shadow: 2px -3px 8px rgba(0, 185, 0, 0.5),
+    -4px 2px 8px rgba(0, 185, 0, 0.5);
+}
+
+.btn {
+    font-family: 'VT323', monospace;
+    width: 200px;
+    height: 70px;
+    border-radius: 20px; 
+    box-sizing: border-box;
+    transform: translateX(-50%);
+    border: none;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 8px;
+    cursor: pointer;
+    background-color: rgb(0, 228, 68);
+    color: white;
+}
+
+#svgid { 
+   transform: scale(2);
+}
+
+.btn:focus,
+.btn:active {
+    outline: none;
+    box-shadow: 2px -3px 8px red,
+    -4px 2px 8px rgba(185, 0, 0, 0.5);
+}
+
+#boss_button {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%) scale(2);
+}

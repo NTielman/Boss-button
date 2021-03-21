@@ -1,0 +1,22 @@
+.chase_button {
+    position: absolute;
+    z-index: 4;
+}
+
+@keyframes tilt_right {
+    0% {
+        transform: rotate(0deg)
+                    translate(-165px)
+                    rotate(0deg);
+        opacity:1}
+    50% {opacity:0;}
+    100% {
+        transform: rotate(360deg)
+                    translate(-165px)
+                    rotate(-360deg);
+                    opacity:1}
+}
+
+.rotating {
+    animation: tilt_right 2s linear 0s infinite;
+}

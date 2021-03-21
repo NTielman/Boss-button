@@ -1,0 +1,14 @@
+#dropit{
+  position:absolute;
+  z-index: 6;
+}
+
+.animation{
+  animation: falling 2s linear forwards;
+  animation-iteration-count: infinite;
+}
+
+@keyframes falling{
+    0%{opacity: 1}
+    100%{transform: translateY(100vh)}
+  }
