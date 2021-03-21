@@ -1,4 +1,6 @@
 // add a class to start the animation
+import { getVolume } from '../soundcontrol/volume.js'
+
 const startAnimation = (e) => {
     const selected = e.target;
 
@@ -19,7 +21,10 @@ const startAnimation = (e) => {
     var audio = new Audio("../sounds/falling.mp3");
     audio.loop = true;
     audio.play();
-    audio.volume = 0.4;
+    setInterval(() => {
+        audio.volume = getVolume();
+    }, 200);
+    
 }
 
 /**
