@@ -41,7 +41,10 @@ const startAnimation = (e) => {
     selected.addEventListener("mouseleave", () => {
         selected.style.animationPlayState = "running";
     })
-
+    
+    var audio = new Audio("../sounds/falling.mp3")
+    audio.loop = true
+    audio.play()
 }
 
 /**
@@ -55,6 +58,8 @@ export const createMe = () => {
     newButton.setAttribute("id", "dropit")
     newButton.classList.add("btn");
     newButton.addEventListener("click", startAnimation)
+
+    // create the audio tag
 
     return newButton
 }
